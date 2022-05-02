@@ -3,7 +3,7 @@ import './App.css';
 import InputField from './components/InputField';
 import TodoList from './components/TodoList';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, fetchTodos } from './store/todoSlice';
+import { addNewTodo, fetchTodos } from './store/todoSlice';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
 
   const addTask = () => {
     if (title.trim().length) {
-      dispatch(addTodo({ title }));
+      dispatch(addNewTodo(title));
       setText('');
     }
   }
